@@ -38,11 +38,11 @@
                     Gender
                     <div >
                         <label for="male">Male</label>
-                        <input type ="radio" name = "gender" value="1" id="male"> 
+                        <input type ="radio" name = "gender" id="male"> 
                     </div>
                     <div>
                         <label for="female">Female</label>
-                        <input type ="radio" name ="gender" value ="2" id="female"><br><br>
+                        <input type ="radio" name ="gender" id="female"><br><br>
                     </div>
                 </div>
                 <div class="button">
@@ -59,15 +59,22 @@
                 var date= document.getElementById('date').value;
                 var month= document.getElementById('month').value;
                 var year= document.getElementById('year').value;
-                var gendervar = document.getElementsByName('gender').value;
+                var gendermale = document.getElementById('male').checked;
+                var genderfemale = document.getElementById('female').checked;
                 alert("date is " + date + " month is " +month + " year is " + year)
                 var day =parseInt(date) + parseInt(month) + parseInt(year)
                 alert("the day is " + day)
-                alert(gendervar)
+                alert(gendermale)
+                alert(genderfemale)
 
                 var Day_of_the_week = ( ( (19/4) -2*19-1) + ((5*parseInt(year)/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
                 alert("calculated day is " + Day_of_the_week)
-                
+                if (gendermale===true) {
+                  alert ("you are a male")  
+     
+                }else
+                alert("you are a female")
+
             malenames =["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]
             femalenames =["Akosu", "Adwoa", "Abenaa", "Akuu", "Yaa", "Afua", "Ama"]
 
