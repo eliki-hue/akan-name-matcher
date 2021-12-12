@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>akan name matcher</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="script" href="script.js">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
@@ -21,32 +20,51 @@
 
         </div>
         <div class="row">
-            <form action="script.js" method="">
-                <div>
+            <form action="" method="get" id="foam">
+                <div class="date">
                     <label for="date">DATE</label>
-                    <input type="number" name="DATE" id="date" placeholder="Enter the date you were born">
+                    <input type="number" name="DATE" id="date" placeholder="Enter the date you were born" required>
                 </div>
-                <div>
+                <div class="month">
                     <label for="month">MONTH</label>
-                    <input type="number" name="MONTH" id="month" placeholder="Enter the month you were born">
+                    <input type="number" name="month" id="month" placeholder="Enter the month you were born" required>
                 </div>
-                <div>
+                <div class="year">
                     <label for="year">YEAR</label>
-                    <input type="number" name="YEAR" id="year" placeholder="Enter the year you were born">
+                    <input type="number" name="year" id="year" placeholder="Enter the year you were born" required>
                 </div>
-                <div>
+                <div class="checkbox">
                     
-                    <input type = "checkbox" name = "male" value = "on"> Male
-                    <input type = "checkbox" name = "female" value = "on"> Female
+                    <input type = "radio" name = "gender" value="Male" required> Male
+                    <input type = "radio" name = "gender" value ="Female" required> Female
                     
                 </div>
-                <div>
+                <div class="button">
                     <button type="reset">CANCEL</button>
                     <button onclick="dayCalculator ()">SUBMIT</button>
                 </div>
             </form>
         </div>
-        <script src="script.js"></script>
+        
+        
+        <script >
+            
+            function dayCalculator (){
+                var date= document.getElementById('date').value;
+                var month= document.getElementById('month').value;
+                var year= document.getElementById('year').value;
+                alert("date is " + date + " month is " +month + " year is " + year)
+                var day =parseInt(date) + parseInt(month) + parseInt(year)
+                alert("the day is " + day)
+
+                var Day_of_the_week = ( ( (19/4) -2*19-1) + ((5*parseInt(year)/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
+                alert("calculated day is " + Day_of_the_week)
+                
+            //     malenames =["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]
+            // femalenames =["Akosu", "Adwoa", "Abenaa", "Akuu", "Yaa", "Afua", "Ama"]
+
+            }
+        </script>
 
     </div>
 
