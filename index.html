@@ -23,21 +23,27 @@
             <form action="" method="get" id="foam">
                 <div class="date">
                     <label for="date">DATE</label>
-                    <input type="number" name="DATE" id="date" placeholder="Enter the date you were born" required>
+                    <input type="number" name="DATE" id="date" placeholder="Enter the date you were born" required><br><br>
+                
                 </div>
                 <div class="month">
                     <label for="month">MONTH</label>
-                    <input type="number" name="month" id="month" placeholder="Enter the month you were born" required>
+                    <input type="number" name="month" id="month" placeholder="Enter the month you were born" required><br><br>
                 </div>
                 <div class="year">
                     <label for="year">YEAR</label>
-                    <input type="number" name="year" id="year" placeholder="Enter the year you were born" required>
+                    <input type="number" name="year" id="year" placeholder="Enter the year you were born" required><br><br>
                 </div>
-                <div class="checkbox">
-                    
-                    <input type = "radio" name = "gender" value="Male" required> Male
-                    <input type = "radio" name = "gender" value ="Female" required> Female
-                    
+                <div>
+                    Gender
+                    <div >
+                        <label for="male">Male</label>
+                        <input type ="radio" name = "gender" value="1" id="male"> 
+                    </div>
+                    <div>
+                        <label for="female">Female</label>
+                        <input type ="radio" name ="gender" value ="2" id="female"><br><br>
+                    </div>
                 </div>
                 <div class="button">
                     <button type="reset">CANCEL</button>
@@ -53,15 +59,17 @@
                 var date= document.getElementById('date').value;
                 var month= document.getElementById('month').value;
                 var year= document.getElementById('year').value;
+                var gendervar = document.getElementsByName('gender').value;
                 alert("date is " + date + " month is " +month + " year is " + year)
                 var day =parseInt(date) + parseInt(month) + parseInt(year)
                 alert("the day is " + day)
+                alert(gendervar)
 
                 var Day_of_the_week = ( ( (19/4) -2*19-1) + ((5*parseInt(year)/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
                 alert("calculated day is " + Day_of_the_week)
                 
-            //     malenames =["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]
-            // femalenames =["Akosu", "Adwoa", "Abenaa", "Akuu", "Yaa", "Afua", "Ama"]
+            malenames =["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]
+            femalenames =["Akosu", "Adwoa", "Abenaa", "Akuu", "Yaa", "Afua", "Ama"]
 
             }
         </script>
