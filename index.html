@@ -38,7 +38,7 @@
                     Gender
                     <div >
                         <label for="male">Male</label>
-                        <input type ="radio" name = "gender" id="male"> 
+                        <input type ="radio" name = "gender" id="male" checked> 
                     </div>
                     <div>
                         <label for="female">Female</label>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="button">
                     <button type="reset">CANCEL</button>
-                    <button onclick="dayCalculator ()">SUBMIT</button>
+                    <button type="submit" onclick="dayCalculator ()">SUBMIT</button>
                 </div>
             </form>
         </div>
@@ -73,7 +73,11 @@
                   alert ("you are a male")  
      
                 }else
-                alert("you are a female")
+                    if (genderfemale===true){
+                        alert("you are a female")
+                    }else
+                        alert("select whether male or female")
+                        return false
 
             malenames =["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]
             femalenames =["Akosu", "Adwoa", "Abenaa", "Akuu", "Yaa", "Afua", "Ama"]
