@@ -15,6 +15,8 @@
         <div class="row">
             <div class="col-min">
                 <h1 id="intro">Welcome to Akan name matcher</h1>
+                <p>This program determines which day of the week you were born and gives you an akan name that corresponda to that day.</p><br>
+
             <p>Put your birthday details in the boxes to get the Akan name that matches with the day you were born</p>        
             </div>
 
@@ -23,16 +25,16 @@
             <form action="" method="get" id="foam">
                 <div class="date">
                     <label for="date">DATE</label>
-                    <input type="number" name="DATE" id="date" placeholder="Enter the date you were born" required><br><br>
+                    <input type="number" name="DATE" id="date" placeholder="Enter the date you were born" min="1" max="31" required>
                 
                 </div>
                 <div class="month">
                     <label for="month">MONTH</label>
-                    <input type="number" name="month" id="month" placeholder="Enter the month you were born" required><br><br>
+                    <input type="number" name="month" id="month" placeholder="Enter the month you were born" min="1" max="12" required>
                 </div>
                 <div class="year">
                     <label for="year">YEAR</label>
-                    <input type="number" name="year" id="year" placeholder="Enter the year you were born" min="1900" max="2030" required><br><br>
+                    <input type="number" name="year" id="year" placeholder="Enter the year you were born" min="1900" max="2030" required>
                 </div>
                 <div>
                     Gender
@@ -47,50 +49,59 @@
                 </div>
                 <div class="button">
                     <button type="reset">CANCEL</button>
-                    <button type="submit" onclick="dayCalculator ()">SUBMIT</button>
+                    <button type="submit" onclick="validateInput ()">SUBMIT</button>
                 </div>
             </form>
         </div>
         
         
         <script >
-            
-            function dayCalculator (){
-                var date= document.getElementById('date').value;
-                var month= document.getElementById('month').value;
-                var year= document.getElementById('year').value;
-                var gendermale = document.getElementById('male').checked;
-                var genderfemale = document.getElementById('female').checked;
-                alert("date is " + date + " month is " +month + " year is " + year)
-               var cc =parseInt(year.slice(0,2))
-               alert("cc is " + cc)
-               var yy =parseInt(year.slice(2,4))
-                alert("yy is " + yy)
-                var D= ( ( (cc/4) -2*cc-1) + ((5*(yy)/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
-                alert(D)
-                var day_of_the_week= D.toFixed(0)
-                alert("calculated day is " + day_of_the_week)
-                
+               
+               function validateInput (){
+                    if(date === '') {
+                        setError(date, 'date is required');
+                    } else if (month === '') {
+                        setError(month, 'Month is required');
+                    } else if (year ==='') {
+                        setError(year, 'Year is required')
+                    }else {
+                        
+                        var date= document.getElementById('date').value;
+                        var month= document.getElementById('month').value;
+                        var year= document.getElementById('year').value;
+                        var gendermale = document.getElementById('male').checked;
+                        var genderfemale = document.getElementById('female').checked;
+                        alert("You were born on " + date + "/" +month + "/" + year)
+                         var cc =parseInt(year.slice(0,2))
+                    
+                         var yy =parseInt(year.slice(2,4))
+                        
+                        var D= ( ( (cc/4) -2*cc-1) + ((5*(yy)/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
+                    
+                        var day_of_the_week= D.toFixed(0)
+                        // alert("calculated day is " + day_of_the_week)
+                        
 
-                malenames =["Kwame","Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi"]
-                femalenames =["Ama","Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua"]
-                days_of_the_week =["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-                if (gendermale===true) {
-                  alert ("you are a male")  
-                  var akan=malenames[day_of_the_week ]
-                  var day_of_week = days_of_the_week[day_of_the_week]
-                    alert("You were born on a " + day_of_week + " your akan name is " + akan)
-                }else
-                    if (genderfemale===true){
-                        alert("you are a female")
-                        var akan=femalenames[day_of_the_week ]
-                  var day_of_week = days_of_the_week[day_of_the_week]
-                    alert("You were born on a " + day_of_week + " your akan name is " + akan)
-                    }else
-                        alert("select whether male or female")
-                        return false
+                        malenames =["Kwame","Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi"]
+                        femalenames =["Ama","Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua"]
+                        days_of_the_week =["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+                        if (gendermale===true) {
+                        alert ("you are a male")  
+                        var akan=malenames[day_of_the_week ]
+                        var day_of_week = days_of_the_week[day_of_the_week]
+                            alert("You were born on a " + day_of_week + " your akan name is " + akan)
+                        }else
+                            if (genderfemale===true){
+                                alert("you are a female")
+                                var akan=femalenames[day_of_the_week ]
+                        var day_of_week = days_of_the_week[day_of_the_week]
+                            alert("You were born on a " + day_of_week + " your akan name is " + akan)
+                            }
+             
+                   
 
-            }
+                     }
+                }
         </script>
 
     </div>
