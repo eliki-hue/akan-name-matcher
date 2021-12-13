@@ -73,7 +73,7 @@
                 
 
                 malenames =["Kwame","Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi"]
-                femalenames =["Akosu", "Adwoa", "Abenaa", "Akuu", "Yaa", "Afua", "Ama"]
+                femalenames =["Ama","Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua"]
                 days_of_the_week =["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
                 if (gendermale===true) {
                   alert ("you are a male")  
@@ -83,6 +83,9 @@
                 }else
                     if (genderfemale===true){
                         alert("you are a female")
+                        var akan=femalenames[day_of_the_week ]
+                  var day_of_week = days_of_the_week[day_of_the_week]
+                    alert("You were born on a " + day_of_week + " your akan name is " + akan)
                     }else
                         alert("select whether male or female")
                         return false
