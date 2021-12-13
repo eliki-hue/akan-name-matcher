@@ -66,20 +66,26 @@
                alert("cc is " + cc)
                var yy =parseInt(year.slice(2,4))
                 alert("yy is " + yy)
-                var Day_of_the_week = ( ( (cc/4) -2*cc-1) + ((5*(yy)/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
-                alert("calculated day is " + Day_of_the_week)
+                var D= ( ( (cc/4) -2*cc-1) + ((5*(yy)/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
+                alert(D)
+                var day_of_the_week= D.toFixed(0)
+                alert("calculated day is " + day_of_the_week)
+                
+
+                malenames =["Kwame","Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi"]
+                femalenames =["Akosu", "Adwoa", "Abenaa", "Akuu", "Yaa", "Afua", "Ama"]
+                days_of_the_week =["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
                 if (gendermale===true) {
                   alert ("you are a male")  
-     
+                  var akan=malenames[day_of_the_week ]
+                  var day_of_week = days_of_the_week[day_of_the_week]
+                    alert("You were born on a " + day_of_week + " your akan name is " + akan)
                 }else
                     if (genderfemale===true){
                         alert("you are a female")
                     }else
                         alert("select whether male or female")
                         return false
-
-            malenames =["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]
-            femalenames =["Akosu", "Adwoa", "Abenaa", "Akuu", "Yaa", "Afua", "Ama"]
 
             }
         </script>
