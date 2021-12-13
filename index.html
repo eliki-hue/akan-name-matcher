@@ -32,7 +32,7 @@
                 </div>
                 <div class="year">
                     <label for="year">YEAR</label>
-                    <input type="number" name="year" id="year" placeholder="Enter the year you were born" required><br><br>
+                    <input type="number" name="year" id="year" placeholder="Enter the year you were born" min="1900" max="2030" required><br><br>
                 </div>
                 <div>
                     Gender
@@ -62,12 +62,11 @@
                 var gendermale = document.getElementById('male').checked;
                 var genderfemale = document.getElementById('female').checked;
                 alert("date is " + date + " month is " +month + " year is " + year)
-                var day =parseInt(date) + parseInt(month) + parseInt(year)
-                alert("the day is " + day)
-                alert(gendermale)
-                alert(genderfemale)
-
-                var Day_of_the_week = ( ( (19/4) -2*19-1) + ((5*parseInt(year)/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
+               var cc =parseInt(year.slice(0,2))
+               alert("cc is " + cc)
+               var yy =parseInt(year.slice(2,4))
+                alert("yy is " + yy)
+                var Day_of_the_week = ( ( (cc/4) -2*cc-1) + ((5*(yy)/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
                 alert("calculated day is " + Day_of_the_week)
                 if (gendermale===true) {
                   alert ("you are a male")  
