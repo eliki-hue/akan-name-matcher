@@ -49,22 +49,25 @@
                 </div>
                 <div class="button">
                     <button type="reset">CANCEL</button>
-                    <button type="submit" onclick="validateInput ()">SUBMIT</button>
+                    <input type="submit" id="submit" value="submit form" />
                 </div>
             </form>
         </div>
         
         
         <script >
-               
+               document.getElementById("foam").addEventListener("submit", validateInput)
                function validateInput (){
                     if(date === '') {
-                        setError(date, 'date is required');
-                    } else if (month === '') {
-                        setError(month, 'Month is required');
-                    } else if (year ==='') {
-                        setError(year, 'Year is required')
-                    }else {
+                    setError(date, 'date is required');
+                    } 
+                    else if (month === '') {
+                    setError(month, 'Month is required');
+                    }
+                    else if (year ==='' || year === null) {
+                    setError(year, 'Year is required')
+                     }
+                    else {
                         
                         var date= document.getElementById('date').value;
                         var month= document.getElementById('month').value;
@@ -101,7 +104,7 @@
                    
 
                      }
-                }
+                    }
         </script>
 
     </div>
