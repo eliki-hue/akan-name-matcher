@@ -8,4 +8,4 @@ Technologies used: HTML, CSS AND JAVASCRIPT
 Contact information: phone- 0717277631
                     email: kiraguelijah@yahoo.com
 License :elijah kiragu, 2021
-Copyright information: public
+Copyright information: public license
