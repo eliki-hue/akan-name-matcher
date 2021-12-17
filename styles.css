@@ -1,32 +1,41 @@
 .container { 
-    /* background-color: cornflowerblue; */
+    background-color: rgb(202, 127, 127);
+    align-items: center;
+    border: black;
+    margin-top: 100px;
+    color:white;
 
 
 }
 #intro{
-    color: rgb(51, 201, 96);
+    color: rgb(51, 66, 201);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-top: 30px;
 }
 #date {
-    background-color: coral;
+    background-color:white;
     width: 400px;
+    
 }
 #month {
-    background-color: coral;
+    background-color: white;
     width: 400px;
 }#year {
-    background-color: coral;
+    background-color:white;
     width: 400px;
 }
 .foam {
     size: 100%;
-    background-color:rgb(202, 190, 214) ;
-    align-items: center;
+    background-color:rgb(153, 127, 179) ;
+    color: #000;
 }
 
 input {
     width: auto;
-    color: purple;
+    color: blue;
     font-weight: bold;
+    cursor: pointer;
+    margin-left: 600px;
+    
 }
+

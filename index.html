@@ -34,7 +34,7 @@
                 </div>
                 <div class="year">
                     <label for="year">YEAR</label>
-                    <input type="number" name="year" id="year" placeholder="Enter the year you were born" min="1000" max="2030" required><br><br>
+                    <input type="number" name="year" id="year" placeholder="Enter the year you were born" min="1900" max="2030" required><br><br>
                 </div>
                 <div>
                     Gender
@@ -74,27 +74,32 @@
                          var yy =parseInt(year.slice(2,4))
                         
                         var D= ( ( (cc/4) -(2*cc)-1) + (5*(yy)/4)  + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
-                    
-                        alert(D)
-                        var day_of_the_week= D.toFixed(0)
+                                        
+                        var day_of_the_week = D.toFixed(0)
+                               
+                            
                        
-                        const  days_of_the_week =["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "saturday"]
+                        const  days_of_the_week =["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
                                 const proxy = new Proxy(days_of_the_week, {
                                     get(target, prop) {
                                         if (!isNaN(prop)) {
-                                            prop = parseInt(prop, 10);
+                                            prop = parseInt(prop, 7);
                                             if (prop < 0) {
-                                                prop += target.length;
+                                                prop += (target.length) ;
+                                                
+
+                                               
                                             }
                                         }
                                         return target[prop];
                                     }
                                 });
-                                var day=proxy[day_of_the_week]
+                                var day=proxy[day_of_the_week] 
+                            
 
                         if (gendermale===true) {
-                        alert ("you are a male")  
-                        const  malenames =["Kwame","Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]
+                        alert ("you are a Male")  
+                        const  malenames =["Kwame","Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi",]
 
                             const proxy = new Proxy(malenames, {
                                 get(target, prop) {
@@ -102,6 +107,7 @@
                                         prop = parseInt(prop, 10);
                                         if (prop < 0) {
                                             prop += target.length;
+                                          
                                         }
                                     }
                                     return target[prop];
@@ -114,7 +120,7 @@
                             return akan
                         }else
                             if (genderfemale===true){
-                                alert("you are a female")
+                                alert("you are a Female")
 
                                 const  femalenames =["Ama","Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua","Ama"]
                                 const proxy = new Proxy(femalenames, {
@@ -128,16 +134,15 @@
                                         return target[prop];
                                     }
                                 });
-                                var akan=proxy[day_of_the_week]
-                                alert(akan)                                
+                                var akan=proxy[day_of_the_week]                               
                                 var akan=proxy[day_of_the_week]
                                
                             alert("You were born on a " + day + " your akan name is " + akan)
                             }
-                         
+                        }  
 
                     
-                }  
+                
         </script>
 
     </div>
