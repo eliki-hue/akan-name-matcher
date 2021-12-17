@@ -25,16 +25,16 @@
             <form action="" method="get" id="foam">
                 <div class="date">
                     <label for="date">DATE</label>
-                    <input type="number" name="DATE" id="date" placeholder="Enter the date you were born" min="1" max="31" required>
+                    <input type="number" name="date" id="date" placeholder="Enter the date you were born" min="1" max="31" required><br><br>
                 
                 </div>
                 <div class="month">
                     <label for="month">MONTH</label>
-                    <input type="number" name="month" id="month" placeholder="Enter the month you were born" min="1" max="12" required>
+                    <input type="number" name="month" id="month" placeholder="Enter the month you were born" min="1" max="12" required><br><br>
                 </div>
                 <div class="year">
                     <label for="year">YEAR</label>
-                    <input type="number" name="year" id="year" placeholder="Enter the year you were born" min="1900" max="2030" required>
+                    <input type="number" name="year" id="year" placeholder="Enter the year you were born" min="1000" max="2030" required><br><br>
                 </div>
                 <div>
                     Gender
@@ -50,61 +50,94 @@
                 <div class="button">
                     <button type="reset">CANCEL</button>
                     <input type="submit" id="submit" value="submit form" />
-                </div>
+                </div>    
             </form>
+           
+        </div>
+        <div>
+            <h1 id="message"></h1>
         </div>
         
-        
         <script >
-               document.getElementById("foam").addEventListener("submit", validateInput)
-               function validateInput (){
-                    if(date === '') {
-                    setError(date, 'date is required');
-                    } 
-                    else if (month === '') {
-                    setError(month, 'Month is required');
-                    }
-                    else if (year ==='' || year === null) {
-                    setError(year, 'Year is required')
-                     }
-                    else {
+               document.getElementById("foam").addEventListener("submit", validateInputHere)
+               function validateInputHere (){
                         
                         var date= document.getElementById('date').value;
                         var month= document.getElementById('month').value;
                         var year= document.getElementById('year').value;
                         var gendermale = document.getElementById('male').checked;
                         var genderfemale = document.getElementById('female').checked;
+                        let message =document.querySelector("#message");
                         alert("You were born on " + date + "/" +month + "/" + year)
                          var cc =parseInt(year.slice(0,2))
                     
                          var yy =parseInt(year.slice(2,4))
                         
-                        var D= ( ( (cc/4) -2*cc-1) + ((5*(yy)/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
+                        var D= ( ( (cc/4) -(2*cc)-1) + (5*(yy)/4)  + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
                     
+                        alert(D)
                         var day_of_the_week= D.toFixed(0)
-                        // alert("calculated day is " + day_of_the_week)
-                        
+                       
+                        const  days_of_the_week =["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "saturday"]
+                                const proxy = new Proxy(days_of_the_week, {
+                                    get(target, prop) {
+                                        if (!isNaN(prop)) {
+                                            prop = parseInt(prop, 10);
+                                            if (prop < 0) {
+                                                prop += target.length;
+                                            }
+                                        }
+                                        return target[prop];
+                                    }
+                                });
+                                var day=proxy[day_of_the_week]
 
-                        malenames =["Kwame","Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi"]
-                        femalenames =["Ama","Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua"]
-                        days_of_the_week =["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
                         if (gendermale===true) {
                         alert ("you are a male")  
-                        var akan=malenames[day_of_the_week ]
-                        var day_of_week = days_of_the_week[day_of_the_week]
-                            alert("You were born on a " + day_of_week + " your akan name is " + akan)
+                        const  malenames =["Kwame","Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]
+
+                            const proxy = new Proxy(malenames, {
+                                get(target, prop) {
+                                    if (!isNaN(prop)) {
+                                        prop = parseInt(prop, 10);
+                                        if (prop < 0) {
+                                            prop += target.length;
+                                        }
+                                    }
+                                    return target[prop];
+                                }
+                            });
+                            var akan=proxy[day_of_the_week]
+                            
+                         var day_of_week = days_of_the_week[day_of_the_week]
+                            alert("You were born on a " + day + " your akan name is " + akan)
+                            return akan
                         }else
                             if (genderfemale===true){
                                 alert("you are a female")
-                                var akan=femalenames[day_of_the_week ]
-                        var day_of_week = days_of_the_week[day_of_the_week]
-                            alert("You were born on a " + day_of_week + " your akan name is " + akan)
-                            }
-             
-                   
 
-                     }
-                    }
+                                const  femalenames =["Ama","Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua","Ama"]
+                                const proxy = new Proxy(femalenames, {
+                                    get(target, prop) {
+                                        if (!isNaN(prop)) {
+                                            prop = parseInt(prop, 10);
+                                            if (prop < 0) {
+                                                prop += target.length;
+                                            }
+                                        }
+                                        return target[prop];
+                                    }
+                                });
+                                var akan=proxy[day_of_the_week]
+                                alert(akan)                                
+                                var akan=proxy[day_of_the_week]
+                               
+                            alert("You were born on a " + day + " your akan name is " + akan)
+                            }
+                         
+
+                    
+                }  
         </script>
 
     </div>

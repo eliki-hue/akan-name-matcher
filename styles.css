@@ -1,5 +1,5 @@
 .container { 
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
 
 
 }
@@ -10,4 +10,23 @@
 }
 #date {
     background-color: coral;
+    width: 400px;
+}
+#month {
+    background-color: coral;
+    width: 400px;
+}#year {
+    background-color: coral;
+    width: 400px;
+}
+.foam {
+    size: 100%;
+    background-color:rgb(202, 190, 214) ;
+    align-items: center;
+}
+
+input {
+    width: auto;
+    color: purple;
+    font-weight: bold;
 }
