@@ -15,6 +15,7 @@
 #date {
     background-color:white;
     width: 400px;
+    display: flex;
     
 }
 #month {
@@ -28,6 +29,8 @@
     size: 100%;
     background-color:rgb(153, 127, 179) ;
     color: #000;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 input {
