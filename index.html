@@ -57,8 +57,96 @@
         <div>
             <h1 id="message"></h1>
         </div>
-        
+
         <script >
+            document.getElementById("foam").addEventListener("submit", validateInputHere)
+            function validateInputHere (){
+                     
+                     var date= document.getElementById('date').value;
+                     var month= document.getElementById('month').value;
+                     var year= document.getElementById('year').value;
+                     var gendermale = document.getElementById('male').checked;
+                     var genderfemale = document.getElementById('female').checked;
+                     let message =document.querySelector("#message");
+                     alert("You were born on " + date + "/" +month + "/" + year)
+                      var cc =parseInt(year.slice(0,2))
+                 
+                      var yy =parseInt(year.slice(2,4))
+                     
+                     var D= ( ( (cc/4) -(2*cc)-1) + (5*(yy)/4)  + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
+                 
+                     alert(D)
+                     var day_of_the_week= D.toFixed(0)
+                     if(day_of_the_week<0){
+                         day_of_the_week =parseInt(day_of_the_week) + 1
+                     }
+                     alert("ammended "+day_of_the_week)
+
+                     alert(day_of_the_week)
+                    
+                     const  days_of_the_week =["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "saturday"]
+                             const proxy = new Proxy(days_of_the_week, {
+                                 get(target, prop) {
+                                     if (!isNaN(prop)) {
+                                         prop = parseInt(prop, 10);
+                                         if (prop < 0) {
+                                             prop += target.length;
+                                         }
+                                     }
+                                     return target[prop];
+                                 }
+                             });
+                             var day=proxy[day_of_the_week]
+
+                     if (gendermale===true) {
+                     alert ("you are a male")  
+                     const  malenames =["Kwame","Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]
+
+                         const proxy = new Proxy(malenames, {
+                             get(target, prop) {
+                                 if (!isNaN(prop)) {
+                                     prop = parseInt(prop, 10);
+                                     if (prop < 0) {
+                                         prop += target.length;
+                                     }
+                                 }
+                                 return target[prop];
+                             }
+                         });
+                         var akan=proxy[day_of_the_week]
+                         
+                      var day_of_week = days_of_the_week[day_of_the_week]
+                         alert("You were born on a " + day + " your akan name is " + akan)
+                         return akan
+                     }else
+                         if (genderfemale===true){
+                             alert("you are a female")
+
+                             const  femalenames =["Ama","Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua","Ama"]
+                             const proxy = new Proxy(femalenames, {
+                                 get(target, prop) {
+                                     if (!isNaN(prop)) {
+                                         prop = parseInt(prop, 10);
+                                         if (prop < 0) {
+                                             prop += target.length;
+                                         }
+                                     }
+                                     return target[prop];
+                                 }
+                             });
+                             var akan=proxy[day_of_the_week]
+                             alert(akan)                                
+                             var akan=proxy[day_of_the_week]
+                            
+                         alert("You were born on a " + day + " your akan name is " + akan)
+                         }
+                      
+
+                 
+             }  
+     </script>
+        
+        <!-- <script >
                document.getElementById("foam").addEventListener("submit", validateInputHere)
                function validateInputHere (){
                         
@@ -74,16 +162,18 @@
                          var yy =parseInt(year.slice(2,4))
                         
                         var D= ( ( (cc/4) -(2*cc)-1) + (5*(yy)/4)  + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
+                        var d = ( ( (cc/4) -2*cc-1) + ((5*yy/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
                                     
                         var day_of_the_week = D.toFixed(0)
-                       
+                       alert("D initial " +D)
+                       alert("d after "+d)
                         
                             
                        
                         const  days_of_the_week =["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
                         day=days_of_the_week[day_of_the_week]
                               
-                            
+                            alert("day of week " + day )
 
                         if (gendermale===true) {
                         alert ("you are a Male")  
@@ -107,7 +197,7 @@
 
                     
                 
-        </script>
+        </script> -->
 
     </div>
 
