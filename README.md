@@ -16,4 +16,4 @@
 
 **License:** elijah kiragu, 2021
 
-**Copyright information:** view license
+**Copyright information:** MIT license
