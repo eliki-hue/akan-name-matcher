@@ -146,58 +146,7 @@
              }  
      </script>
         
-        <!-- <script >
-               document.getElementById("foam").addEventListener("submit", validateInputHere)
-               function validateInputHere (){
-                        
-                        var date= document.getElementById('date').value;
-                        var month= document.getElementById('month').value;
-                        var year= document.getElementById('year').value;
-                        var gendermale = document.getElementById('male').checked;
-                        var genderfemale = document.getElementById('female').checked;
-                        let message =document.querySelector("#message");
-                        alert("You were born on " + date + "/" +month + "/" + year)
-                         var cc =parseInt(year.slice(0,2))
-                    
-                         var yy =parseInt(year.slice(2,4))
-                        
-                        var D= ( ( (cc/4) -(2*cc)-1) + (5*(yy)/4)  + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
-                        var d = ( ( (cc/4) -2*cc-1) + ((5*yy/4) ) + ((26*(parseInt(month)+1)/10)) + parseInt(date) ) % 7
-                                    
-                        var day_of_the_week = D.toFixed(0)
-                       alert("D initial " +D)
-                       alert("d after "+d)
-                        
-                            
-                       
-                        const  days_of_the_week =["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-                        day=days_of_the_week[day_of_the_week]
-                              
-                            alert("day of week " + day )
-
-                        if (gendermale===true) {
-                        alert ("you are a Male")  
-                        const  malenames =["Kwame","Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi","Kwame"]
-                            var akanName = malenames[day_of_the_week]
-                            alert('You were born on ' + day +" your akan name is " + akanName)
-                            
-                            
-                         
-                        }else
-                            if (genderfemale===true){
-                                alert("you are a Female")
-
-                                const  femalenames =["Ama","Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"]
-                                akanName=femalenames[day_of_the_week]
-                              
-                                alert('You were born on ' +day +" akan name is " + akanName)
-                               
-                            }
-                        }  
-
-                    
-                
-        </script> -->
+        
 
     </div>
 
