@@ -1,4 +1,5 @@
 # akan-name-matcher
+https://github.com/eliki-hue/akan-name-matcher/deployments/activity_log?environment=github-pages
 **Project name:** akan name matcher
 
 **Project description:** The project takes the birthdate of the user, calculates the day of the week when the person was born and then gives the user a name that matches with the day he/she was born.
